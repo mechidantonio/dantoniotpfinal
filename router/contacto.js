@@ -23,7 +23,7 @@ contacto.post("/send-email", (req, res) => {
   });
   const mailOptions = {
     from: "Remitente",
-    to: "mechidantonio@gmail.com",
+    to: "naranjaspintadas@gmail.com",
     subject: `${asunto}`,
     html: `<h1>Este es un mensaje de ${nombre} que consulta por ${asunto} y envía el siguiente mensaje: ${mensaje}. Responder a ${email}</h1>`,
   };
