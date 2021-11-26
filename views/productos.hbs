@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud </title>
+<link href="/public/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="/public/css/custom.css">
+
+
+</head>
+<body>
+
+{{>header}}
+
+{{!-- CRUD --}}
+
+    <div class="fondocrud">
+    <div class="container p-4">
+        <h2> Listado de productos </h2>
+        <button class="btn btn-success" data-toggle="modal" data-target="#myModalAdd" id="btnagregar"><img src="/public/img/anadir (1).png" alt="imgañadir"> AGREGAR NUEVO </button>
+        
+
+    <table class="table table-bordered table-hover" id="mytable">
+            <thead class="thead thead-dark">
+                <th> ID PRODUCTO </th>
+                <th> NOMBRE </th>
+                <th> PRECIO </th>
+                <th> ACCIÓN </th>
+
+            </thead>
+            <tbody>
+                {{#each results}}
+        <tr>
+                <td> {{ producto_id }}</td>
+                <td> {{ producto_nombre }}</td>
+                <td> {{ producto_precio }}</td>
+        
+                <td><a href="javascript:void(0);" class="btn edit" data-id="{{ producto_id}}" data-producto-nombre="{{ producto_nombre}}" data-producto_precio="{{ producto_precio}}"><img src="/public/img/icons8-editar (1).svg" alt="imgcestobasura"></a>    
+                <a href="javascript:void(0);" class="btn delete" data-id="{{ producto_id}}"><img src="/public/img/icons8-basura (3).svg" alt="imgcestobasura"></a>
+                </td>
+                
+            </tr>
+
+            {{/each}}
+            </tbody>
+
+        </table>
+    </div>
+    </div>
+
+
+
+	<!-- MODAL AGREGAR PRODUCTOS -->
+        <form action="/save" method="post">       
+            <div class="modal fade" id="myModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Añadir producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" name="producto_nombre" class="form-control" placeholder="Nombre producto" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="producto_precio" class="form-control" placeholder="Precio" required>
+                </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+            </div>
+            </div>
+        </form>
+
+
+
+
+{{!-- Modal Editar--}}
+
+    <form action="/update" method="post">
+        <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" name="producto_nombre" class="form-control producto_nombre" placeholder="Producto Nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="producto_precio" class="form-control precio" placeholder="Precio" required>
+                </div>
+                </div>
+                <div class="modal-footer">
+                <input type="hidden" name="id" class="producto_id">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+                </div>
+            </div>
+            </div>
+            </div>
+    </form>
+
+
+
+
+
+{{!-- Modal Borrar --}}
+
+        <form id="add-row-form" action="/delete" method="post">
+            <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myModalLabel">Borrar Producto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                    <strong>¿Estás seguro de borrar este elemento?</strong>
+                    </div>
+                    <div class="modal-footer">
+                    <input type="hidden" name="producto_id" class="form-control producto_id2" required>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-success">Eliminar</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+{{>footer}}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script>
+$(document).ready(function(){
+    $('#mytable').on('click', '.edit', function(){
+        let producto_id = $(this).data('id');
+        let producto_nombre = $(this).data('producto_nombre');
+        let producto_precio = $(this).data('producto_precio');
+        $('#EditModal').modal('show');
+        $('.producto_nombre').val(producto_nombre);
+        $('.precio').val(producto_precio);
+        $('.producto_id').val(producto_id);
+    })
+
+
+    //Mostrar datos al modal
+
+    $('#mytable').on('click', '.edit', function(){
+        let producto_id = $(this).data('id');
+        let producto_nombre = $(this).data('producto_nombre');
+        let producto_precio = $(this).data('producto_precio');
+        $('#EditModal').modal('show');
+        $('.producto_nombre').val(producto_nombre);
+        $('.precio').val(producto_precio);
+        $('.producto_id').val(producto_id);
+    })
+
+
+    $('#mytable').on('click', '.delete', function(){
+        let producto_id = $(this).data('id');
+        $('#DeleteModal').modal('show');
+        $('.producto_id2').val(producto_id);
+
+    })
+})
+</script>
+
+
+
+</body>
+</html>

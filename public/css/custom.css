@@ -1,0 +1,162 @@
+
+* {
+    Margin:0;
+    padding:0;
+ }
+
+ .navbarHome{
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding-left: 15rem; 
+}
+
+.navbarHome li{
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #8fd8d2;
+}
+
+
+.img-fluid {
+    max-width: 12%;
+    margin: 1.2rem;  
+}
+    
+.btn-outline-success {
+    color: #8fd8d2;
+   border-color: #8fd8d2;
+}
+
+.colorfondo{
+    background-color: rgb(233, 240, 240);
+}
+
+.textoE{
+    padding: 3rem;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.botondecompra{
+    background-color: rgb(233, 208, 204);
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+}
+
+.flex{
+    display:flex;
+    padding: 1.2rem;
+    background-color:rgb(233, 240, 240);
+}
+
+
+
+#textoVideo{
+    background-color:rgb(233, 240, 240);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    text-align: justify;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.video{
+    border-radius: 1rem;
+}
+
+.formulario{
+    padding: 1.2rem;
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+}
+
+.titulo{
+    color: dimgray;
+}
+
+.btn-primary{
+    background-color: rgb(213, 238, 238);
+    color: dimgray;
+}
+
+.btn-primary:hover{
+    background-color: rgb(106, 223, 207);
+}
+
+ .btnform{
+    padding: 0.5rem;
+    background-color: rgb(195, 238, 236);
+    border-radius: 0.5rem;
+} 
+
+.card{
+    background-image: url(/public/img/ladrillo.jpg);
+    padding: 0.5rem;
+}
+footer{
+    background-color: rgb(195, 238, 236);
+    color: dimgray;
+    padding: 2rem;
+}
+
+
+.creditofinal{
+    text-align: center;
+    padding: 1rem;
+}
+
+.creditofinal a{
+    display: inline-block;
+    text-align: center;
+    width: 3rem;
+    padding: 0.5rem;
+
+}
+
+.fondocrud{
+    background-image: url(/public/img/white-brick-wall-textured-background.jpg);
+    background-size: cover;
+    
+}
+
+.btn-success{
+    background-color:rgb(255, 255, 255);
+    color: darkslategrey;
+    margin: 0.5rem;
+}
+
+.btn-success:hover{
+    background-color: rgb(207, 219, 219);
+}
+
+.fotosig{
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+}
+
+.formulario{
+    background-image: url(/public/img/ladrillo.jpg);
+}
+
+
+@media (min-width:768px) {
+    #textoVideo{
+        padding: 1.2rem;
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        text-align: justify;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .formulario{
+        padding: 1.2rem;
+    }
+    }
+

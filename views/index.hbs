@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Necha Tejidos</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/custom.css">
+  
+  
+</head>
+<body>
+{{>header}}
+
+{{!-- Carrousel --}}
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/public/img/1 (2).png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/public/img/2 (2).png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/public/img/Foto3.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="colorfondo">
+
+<div>
+    <h3 class="textoE"> "El amor que más abriga es el que se teje punto a punto."<h3>
+</div>
+
+
+{{!-- CARDS --}}
+
+<section class="container justify-content-center p-2">
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6 col-lg-3">
+    <div class="card">
+        <img src="public/img/DSC_0291.JPG" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <p class="card-text"> <h5> Sweater calado color </h1> Tejidos a crochet. </p>
+          <button class="botondecompra" onclick="respuestaClick()">¡LO QUIERO!</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3">
+      <div class="card">
+        <img src="/public/img/Diseño sin título (11).png" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <p class="card-text"> <h5>Gorrito violeta </h1> Tejidos dos agujas. Único.</p>
+          <button class="botondecompra" onclick="respuestaClick()">¡LO QUIERO!</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card">
+          <img src="public/img/DSC_0708.JPG" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <p class="card-text"><h5>Gorrito ese</h1> No hay dos iguales</p>
+            <button class="botondecompra" onclick="respuestaClick()">¡LO QUIERO!</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card">
+          <img src="/public/img/Diseño sin título (12).png" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <p class="card-text"><h5>Gorrito bebe</h1>Violeta y eso</p>
+              <button class="botondecompra" onclick="respuestaClick()">¡LO QUIERO!</button>
+          </div>
+        </div>
+      </div>
+
+<!-- Feed Instagram en movimiento -->
+
+<div class="fotosig">
+<iframe src="https://snapwidget.com/embed/974284" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:640px; height:160px"></iframe>
+</div>
+
+</div>
+</section>
+
+
+</div>
+</div>
+{{>footer}}
+
+
+<script src="/public/js/validaciones.js"></script>
+<script src="/public/js/jquery-3.3.1.js"></script>
+<script src="/public/js/bootstrap.js"></script>
+</body>
+
+
+
+</html>

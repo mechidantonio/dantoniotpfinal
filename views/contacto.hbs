@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Necha tejidos - Contacto</title>
+    <link href="/public/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/public/css/custom.css">
+    
+   
+
+</head>
+<body>
+
+    {{>header}}
+
+<div id="textoVideo">
+  <video src="/public/img/videogorros.MP4" width="400" height="360" autoplay muted loop class="video"></video>
+ 
+       
+
+<section class="container">
+   
+        <form action="/send-email" method="post" onsubmit="return validarFormulario()" class="formulario">
+        <h3 class="titulo"> ¡Dejanos tu mensaje y te respondemos pronto!</h3>
+        <div class="mb-3">
+            <input type="text" id="nombre" class="form-control" name ="nombre"  placeholder="Ingresá tu nombre y apellido">
+        </div> 
+        <div class="mb-3">
+        <input type="email" id="email" class="form-control" name="email" placeholder="Ingresá tu correo electrónico">
+        </div> 
+            <div class="mb-3">
+            <input type="text" class="form-control" name ="asunto" placeholder="Escribí el asunto de tu consulta">
+        </div> 
+        <div class="mb-3">
+        <textarea name="mensaje" id="mensaje" class="form-control" cols="20" rows="5" placeholder="¡Dejanos tu mensaje!"></textarea>
+        </div>
+    <input type="submit" value="Enviar" class="btnform">
+    </form>
+    </section>
+
+</div>
+
+ 
+ </div>     
+
+
+{{>footer}}
+
+
+
+<script src="/public/js/validaciones.js"></script>
+<script src="/public/js/jquery-3.3.1.js"></script>
+<script src="/public/js/bootstrap.js"></script>
+
+</body>
+
+
+
+</html>
